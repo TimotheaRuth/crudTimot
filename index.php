@@ -70,6 +70,29 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
         </div>
+        <table>
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>PhoneNum</td>
+                    <td>Address</td>
+                </tr>
+            <?php
+                $sql1 = "SELECT * FROM data";
+                $query = mysqli_query($con,$sql1);
+                while($data = mysqli_fetch_array($query)){
+                    ?>
+                <tr>
+                    <td><?=$data["Name"]?></td>
+                    <td><?=$data["Email"]?></td>
+                    <td><?=$data["PhoneNum"]?></td>
+                    <td><?=$data["Address"]?></td>
+                </tr>
+                <?php
+                }
+                    ?>
+            
+        </table>
 
     </div>
 
